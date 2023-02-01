@@ -65,7 +65,7 @@ class OutstandingStatementXslx(models.AbstractModel):
         format_tcell_date_left = FORMATS["format_tcell_date_left"]
         format_distributed = FORMATS["format_distributed"]
         current_money_format = FORMATS["current_money_format"]
-        for line in currency_data.get("lines"):
+        for line in currency_data.get("lines", []):
             if line.get("blocked"):
                 format_tcell_left = FORMATS["format_tcell_left_blocked"]
                 format_tcell_date_left = FORMATS["format_tcell_date_left_blocked"]
