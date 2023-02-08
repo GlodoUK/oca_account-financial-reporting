@@ -79,7 +79,7 @@ class OutstandingStatementXslx(models.AbstractModel):
                 if not line.get("ref", ""):
                     name_to_show = line.get("name", "")
                 else:
-                    if (line.get("ref", "") in line.get("name", "")) or (
+                    if (line.get("ref", "") in (line.get("name", "") or "")) or (
                         line.get("name", "") == line.get("ref", "")
                     ):
                         name_to_show = line.get("name", "")
